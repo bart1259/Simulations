@@ -1,0 +1,1 @@
+# Finite Difference Method (FDM) for 1D Heat Diffusion Equation
