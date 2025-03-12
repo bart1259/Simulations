@@ -6,14 +6,17 @@ This repo contains the code for simulations I used to teach myself about various
 ---
 Experiment # | Simulation | Method | Technologies
 --- | --- | --- | ---
-01 | Mass Spring Oscillator | Forward Euler, Backward Euler, and Runge-Kutta 4th Order | Python, NumPy, Matplotlib
-02 | 1D Heat Diffusion | Finite Difference Method | Python, NumPy, Matplotlib
-03 | 2D Heat Diffusion | Finite Difference Method | Python, NumPy, Matplotlib, , SciPy
-04 | 2D Heat Diffusion | Finite Volume Method | Python, NumPy, Matplotlib, SciPy
-05 | 2D Fluid Simulation | Smoothed Particle Hydrodynamics | Python, NumPy, Matplotlib, JAX, VisPy
+01 | Mass Spring Oscillator | Forward Euler, Backward Euler, and Runge-Kutta 4th Order | NumPy, Matplotlib
+02 | 1D Heat Diffusion | Finite Difference Method | NumPy, Matplotlib
+03 | 2D Heat Diffusion | Finite Difference Method | NumPy, Matplotlib, , SciPy
+04 | 2D Heat Diffusion | Finite Volume Method | NumPy, Matplotlib, SciPy
+05 | 2D Fluid Simulation | Smoothed Particle Hydrodynamics | NumPy, Matplotlib, JAX, VisPy
+06 | 3D Fluid Simulation | Smoothed Particle Hydrodynamics | NumPy, Matplotlib, JAX, VisPy, Blender
 
 # Visualizations
 
+## SPH 3D Fluid Simulation (Rendered in Blender)
+![06_SPH_fluid_sim_engine.gif](./gifs/06_SPH_fluid_sim_engine.gif)
 ## SPH 2D Fluid Simulation
 ![05_SPH_2D_fluid_sim.gif](./gifs/05_SPH_2D_fluid_sim.gif)
 ## FVM 2D Heat Diffusion
