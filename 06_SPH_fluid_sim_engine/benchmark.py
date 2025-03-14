@@ -44,7 +44,6 @@ if __name__ == "__main__":
 
     _ = engine.step() # Jit compilation step
 
-    start_time = time.time()
 
     i = 0
     while True:
@@ -56,8 +55,8 @@ if __name__ == "__main__":
         i += 1
         print(f"{i} / {1000} {round(100 * (i/1000),2)}% steps completed", end="\r") 
 
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    print(f"Simulation completed in {elapsed_time:.2f} seconds")
+    print(f"Simulation completed in {engine.neighborhood_calculation_time + engine.step_time:.2f} seconds")
+    print(f"Neighborhood calculation time: {engine.neighborhood_calculation_time:.2f} seconds")
+    print(f"Step time: {engine.step_time:.2f} seconds")
     print(f"Simulation steps: {i}")
-    print(f"Average time per step: {elapsed_time / i:.2f} seconds")
+    print(f"Average time per step: {(engine.neighborhood_calculation_time + engine.step_time) / i:.2f} seconds")

@@ -3,7 +3,7 @@
 ## Benchmarking (benchmarking.py)
 | Computer | Total Time (s) | Time per Step (s) |
 |---------|----------| ----------------|
-| Intel i5-10210U CPU | 235.1 | 0.235 |
+| Intel i5-10210U CPU | 196.2 | 0.20 |
 
 
 ## Blender import fluid meshes script

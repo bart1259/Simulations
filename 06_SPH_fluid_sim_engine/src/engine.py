@@ -13,6 +13,8 @@ from src.kernel_functions import (
     kernel_function_viscosity_laplacian,
 )
 
+import time
+
 MAX_NEIGHBORS = 32
 
 class FluidSimulationEngine:
@@ -38,6 +40,9 @@ class FluidSimulationEngine:
             if spawn_group.spawn_time == 0.0:
                 self._spawn_particles(i)
 
+        self.neighborhood_calculation_time = 0.0
+        self.step_time = 0.0
+
     def _get_neighborhood_matrix(self, positions, h):
         """
         positions: [n, d] array of particle positions
@@ -46,8 +51,8 @@ class FluidSimulationEngine:
         """
         # IDK if this can be written efficiently in jax so we'll use sklearn
         assert type(positions) == np.ndarray, "positions must be a numpy array"
-        tree = KDTree(positions) # TODO: Find ideal leaf size
-        neighbor_indexes = tree.query_ball_tree(tree, r=h)
+        tree = KDTree(positions)
+        neighbor_indexes = tree.query_ball_point(positions, r=h, workers=-1)
         neighborhood_matrix = -np.ones((len(positions), MAX_NEIGHBORS), dtype=int)
         for i, neighbors in enumerate(neighbor_indexes):
             neighborhood_matrix[i, :min(MAX_NEIGHBORS, len(neighbors))] = neighbors[:MAX_NEIGHBORS]
@@ -377,9 +382,18 @@ class FluidSimulationEngine:
                 self._spawn_particles(i)
 
         # Perform a simulation step
+                # Perform a simulation step
+        neighborhood_calulation_start = time.time()
         np_positions = np.array(self.positions)
         neighborhood_matrix = self._get_neighborhood_matrix(np_positions, self.config.kernel_radius) # Uses sklearn so we can't jit this
+        neighborhood_calulation_end = time.time()
+        step_start = time.time()
         self.positions, self.velocities, pressure_forces, viscosity_forces = self._similation_step(self.positions, self.velocities, neighborhood_matrix)
+        step_end = time.time()
+
+        # Profiling
+        self.neighborhood_calculation_time += neighborhood_calulation_end - neighborhood_calulation_start
+        self.step_time += step_end - step_start
 
         # Update the time
         self.time += self.config.time_step
