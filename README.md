@@ -12,6 +12,7 @@ Experiment # | Simulation | Method | Technologies
 04 | 2D Heat Diffusion | Finite Volume Method | NumPy, Matplotlib, SciPy
 05 | 2D Fluid Simulation | Smoothed Particle Hydrodynamics | NumPy, Matplotlib, JAX, VisPy
 06 | 3D Fluid Simulation | Smoothed Particle Hydrodynamics | NumPy, Matplotlib, JAX, VisPy, Blender
+07 | 2D Cloth Simulation | Variational Implicit Euler for Energy Minimization | NumPy, Matplotlib
 
 # Visualizations
 
@@ -19,6 +20,8 @@ Experiment # | Simulation | Method | Technologies
 ![06_SPH_fluid_sim_engine.gif](./gifs/06_SPH_fluid_sim_engine.gif)
 ## SPH 2D Fluid Simulation
 ![05_SPH_2D_fluid_sim.gif](./gifs/05_SPH_2D_fluid_sim.gif)
+## VIE Cloth Simulation
+![07_VIE_cloth_sim.gif](./gifs/07_VIE_cloth_sim.gif)
 ## FVM 2D Heat Diffusion
 ![04_FVM_2D_heat_diffusion.gif](./gifs/04_FVM_2D_heat_diffusion.gif)
 ## FDM 2D Heat Diffusion
