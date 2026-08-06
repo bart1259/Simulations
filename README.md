@@ -13,6 +13,7 @@ Experiment # | Simulation | Method | Technologies
 05 | 2D Fluid Simulation | Smoothed Particle Hydrodynamics | NumPy, Matplotlib, JAX, VisPy
 06 | 3D Fluid Simulation | Smoothed Particle Hydrodynamics | NumPy, Matplotlib, JAX, VisPy, Blender
 07 | 2D Cloth Simulation | Variational Implicit Euler for Energy Minimization | NumPy, Matplotlib
+08 | 2D Frame Dynamics Simulation | Finite Element Method Newmark–Beta structural dynamics | NumPy, Matplotlib
 
 # Visualizations
 
@@ -22,6 +23,8 @@ Experiment # | Simulation | Method | Technologies
 ![05_SPH_2D_fluid_sim.gif](./gifs/05_SPH_2D_fluid_sim.gif)
 ## VIE Cloth Simulation
 ![07_VIE_cloth_sim.gif](./gifs/07_VIE_cloth_sim.gif)
+## 2D FEM Frame Dynamics
+![08_FEM_2d_frame.gif](./gifs/08_FEM_2d_frame.gif)
 ## FVM 2D Heat Diffusion
 ![04_FVM_2D_heat_diffusion.gif](./gifs/04_FVM_2D_heat_diffusion.gif)
 ## FDM 2D Heat Diffusion
